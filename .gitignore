@@ -25,6 +25,7 @@ Source/KolonyTools/obj/x64/Debug/build.force
 *.db
 *.cache
 *.zip
+.vs
 Source/KolonyTools/KolonyTools/obj/Debug/KolonyTools.dll
 Source/KolonyTools/KolonyTools/obj/Debug/KolonyTools.csproj.FileListAbsolute.txt
 Source/KolonyTools/KolonyTools/obj/Debug/KolonyTools.pdb
