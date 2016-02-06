@@ -24,7 +24,13 @@ namespace KolonyTools
             unfocusedRange = 5f)]
         public void ScrapPart()
         {
-            if (!CheckCrew())
+            if(!RecyclePartToggle.RecycleEnabled)
+            {
+                ScreenMessages.PostScreenMessage("Part recycling is disabled", 6f, ScreenMessageStyle.UPPER_CENTER);
+                return;
+            }
+
+            if(!CheckCrew())
                 return;
 
             _demoParts = new List<Part>();
@@ -42,7 +48,13 @@ namespace KolonyTools
             unfocusedRange = 5f)]
         public void ScrapSection()
         {
-            if (!CheckCrew())
+            if(!RecyclePartToggle.RecycleEnabled)
+            {
+                ScreenMessages.PostScreenMessage("Part recycling is disabled", 6f, ScreenMessageStyle.UPPER_CENTER);
+                return;
+            }
+
+            if(!CheckCrew())
                 return;
             _demoParts = new List<Part>();
 
@@ -61,7 +73,13 @@ namespace KolonyTools
             unfocusedRange = 5f)]
         public void ScrapVessel()
         {
-            if (!CheckCrew())
+            if(!RecyclePartToggle.RecycleEnabled)
+            {
+                ScreenMessages.PostScreenMessage("Part recycling is disabled", 6f, ScreenMessageStyle.UPPER_CENTER);
+                return;
+            }
+
+            if(!CheckCrew())
                 return;
             _demoParts = new List<Part>();
             foreach (var p in vessel.parts)
@@ -98,7 +116,7 @@ namespace KolonyTools
             }
             return true;
         }
-
+        
         private void DestroyParts()
         {
             if (_demoParts == null)
@@ -177,6 +195,12 @@ namespace KolonyTools
             unfocusedRange = 5f)]
         public void ScrapPart()
         {
+            if(!RecyclePartToggle.RecycleEnabled)
+            {
+                ScreenMessages.PostScreenMessage("Part recycling is disabled", 6f, ScreenMessageStyle.UPPER_CENTER);
+                return;
+            }
+
             var kerbal = FlightGlobals.ActiveVessel.rootPart.protoModuleCrew[0];
             if (part.children.Any())
             {
